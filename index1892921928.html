@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light of Gospel Church | Singapore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #0b1f38;
+            --accent-gold: #bda163;
+            --dark-slate: #152232;
+            --light-bg: #fbfbfc;
+            --card-bg: #ffffff;
+            --text-dark: #232b35;
+            --text-muted: #4a5460;
+            --text-light: #ffffff;
+            --border-soft: #f0f2f5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation Header */
+        header {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 56px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.72rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Banner Section */
+        .hero {
+            background: linear-gradient(rgba(11, 31, 56, 0.88), rgba(21, 34, 50, 0.96)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 150px 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.4rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #d2daf1;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        /* UI Buttons */
+        .btn {
+            background-color: var(--accent-gold);
+            color: var(--text-light);
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(189, 161, 99, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #aa8e52;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            color: var(--text-light);
+            box-shadow: none;
+            margin-left: 14px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-light);
+            color: var(--primary-blue);
+            border-color: var(--text-light);
+        }
+
+        /* Inline Timings Ribbon */
+        .info-bar {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 24px 20px;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .info-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 24px;
+            font-size: 1.25rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .info-grid div strong {
+            color: var(--accent-gold);
+        }
+
+        /* Expanded Main Sections for Luxurious Desktop Space */
+        .section-container {
+            max-width: 1100px;
+            margin: 120px auto;
+            padding: 0 32px;
+            scroll-margin-top: 110px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-subtitle-line {
+            display: block;
+            width: 45px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 0 auto 45px auto;
+            border-radius: 2px;
+        }
+
+        /* "Who We Are" intro - Left aligned with smooth line wraps */
+        .body-intro {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto 35px auto;
+            line-height: 1.75;
+            font-weight: 500;
+        }
+
+        /* Luxurious, spacious Multi-Language Section */
+        .vision-banner {
+            background-color: #f4f6f9;
+            border-radius: 8px;
+            padding: 32px 40px;
+            margin: 45px auto 60px auto;
+            max-width: 900px;
+            border-left: 4px solid var(--accent-gold);
+            text-align: left;
+        }
+
+        .vision-banner p {
+            color: #3b4554;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* Updated Grid Layout: Side-by-side columns on desktop views */
+        .fellowship-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 40px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .fellowship-card {
+            background: var(--card-bg);
+            padding: 35px 32px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.015);
+            border: 1px solid var(--border-soft);
+            text-align: left;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fellowship-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(189, 161, 99, 0.3);
+        }
+
+        .fellowship-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .fellowship-card p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* Leader Welcome Box */
+        .welcome-box {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.015);
+            border: 1px solid var(--border-soft);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 80px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pastor-img-container {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-gold);
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .pastor-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .welcome-text h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .welcome-text .subtitle {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            margin-top: 2px;
+        }
+
+        .welcome-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            font-style: italic;
+            line-height: 1.65;
+        }
+
+        /* Giving Layout Frame */
+        .giving-outer-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-slate));
+            color: var(--text-light);
+            border-radius: 12px;
+            padding: 55px 45px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(11, 31, 56, 0.12);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .giving-outer-box .giving-intro {
+            color: #cbd5e1;
+            font-size: 1.15rem;
+            max-width: 100%;
+            margin: 0 auto 40px auto;
+            text-align: left;
+            line-height: 1.7;
+        }
+
+        .tithing-card-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .rectangular-give-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 32px 28px;
+            border-radius: 8px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .rectangular-give-card h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+            font-size: 1.45rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .rectangular-give-card p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .rectangular-give-card .code-highlight {
+            margin-top: 12px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            display: inline-block;
+            border-radius: 4px;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            color: var(--text-light);
+            width: fit-content;
+        }
+
+        /* Plan Your Visit Layout */
+        .visit-split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+            border: 1px solid var(--border-soft);
+            align-items: stretch;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .map-wrapper-box {
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 360px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-soft);
+        }
+
+        .map-wrapper-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .visit-info-panel {
+            padding: 10px 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .visit-info-panel h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .visit-info-panel h4:not(:first-of-type) {
+            margin-top: 24px;
+        }
+
+        .visit-info-panel p {
+            color: #2c3540;
+            font-size: 1.05rem;
+            line-height: 1.65;
+        }
+        
+        .visit-info-panel p strong {
+            color: var(--primary-blue);
+        }
+
+        .visit-info-panel a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .visit-info-panel a:hover {
+            text-decoration: underline;
+            color: #aa8e52;
+        }
+
+        /* Base Footer */
+        footer {
+            background-color: #061222;
+            color: #79899c;
+            text-align: center;
+            padding: 45px 20px;
+            font-size: 0.95rem;
+            margin-top: 120px;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        /* Adaptive Mobile Breakdown Rules */
+        @media (max-width: 960px) {
+            .body-intro, .giving-outer-box .giving-intro {
+                text-align: center;
+            }
+            .fellowship-grid {
+                grid-template-columns: 1fr; /* Drops back to your favorite stacked layout perfectly on mobile */
+                gap: 16px;
+                max-width: 900px;
+            }
+            .fellowship-card {
+                padding: 24px 26px;
+            }
+            .tithing-card-row { 
+                grid-template-columns: 1fr; 
+                gap: 15px; 
+            }
+            .visit-split-layout { 
+                grid-template-columns: 1fr; 
+                gap: 25px; 
+            }
+            .map-wrapper-box { 
+                min-height: 260px; 
+            }
+            .info-grid {
+                font-size: 1.1rem;
+                justify-content: center;
+                text-align: center;
+            }
+            .section-container {
+                margin: 80px auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 12px; padding: 15px 20px; }
+            nav ul { gap: 20px; }
+            .hero h2 { font-size: 2.3rem; }
+            .hero p { font-size: 1rem; }
+            .welcome-box { flex-direction: column; text-align: center; padding: 25px; gap: 20px; }
+            .btn-outline { margin-left: 0; margin-top: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="logo.png" alt="Light of Gospel Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>Light of Gospel</h1>
+                    <p>Malayalam Pentecostal Church</p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#giving">Giving</a></li>
+                    <li><a href="#visit">Directions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Faith • Family • Fellowship</h2>
+        <p>A Spirit-filled Malayalam fellowship anchoring lives in scriptural truths and authentic Christian community.</p>
+        <a href="#visit" class="btn">Plan Your Visit</a>
+        <a href="https://youtube.com/@lightofgospelmalayalam" target="_blank" class="btn btn-outline">Watch Live ↗</a>
+    </section>
+
+    <div class="info-bar">
+        <div class="info-grid">
+            <div><strong>Sunday Service:</strong> 9:30 AM – 1:00 PM</div>
+            <div><strong>Saturday Cottage Meeting:</strong> 7:30 PM – 10:30 PM</div>
+        </div>
+    </div>
+
+    <section class="section-container" id="about">
+        <h2 class="section-title">Who We Are</h2>
+        <span class="section-subtitle-line"></span>
+        
+        <p class="body-intro">Light of Gospel Church is a vibrant congregation in Singapore standing firmly on classic apostolic Pentecostal doctrines. We preach the uncompromised Word of God, cultivating dynamic environments for spirit-filled worship, while ensuring local families stay securely anchored together in truth.</p>
+        
+        <div class="vision-banner">
+            <p>Our teaching and fellowship sessions are currently tailored in the Malayalam language to care for our community's roots. We are prayerfully expanding our scope and intend to establish multi-language services in the near future to seamlessly reach out to younger generations and diverse communities across Singapore.</p>
+        </div>
+
+        <div class="fellowship-grid">
+            <div class="fellowship-card">
+                <h3>Sunday Worship</h3>
+                <p>A focused morning of prayer, testimony, spirit-led Malayalam worship, and clear biblical teaching.</p>
+            </div>
+            <div class="fellowship-card">
+                <h3>Cottage Meetings</h3>
+                <p>Saturday night interactive home and church fellowships focusing heavily on local intercession and praise.</p>
+            </div>
+            <div class="fellowship-card">
+                <h3>Next-Gen Build</h3>
+                <p>Structural Bible frameworks actively preparing foundational tracks to support children as our platform scales.</p>
+            </div>
+        </div>
+
+        <div class="welcome-box">
+            <div class="pastor-img-container">
+                <img src="pastor.jpg" alt="Pastor Roji Joseph" class="pastor-img">
+            </div>
+            <div class="welcome-text">
+                <h3>Roji Joseph</h3>
+                <div class="subtitle">Pastor</div>
+                <p>"Welcome to Light of Gospel Church. Whether you are seeking a spiritual home, prayer support, or a community rooted deeply in the Holy Spirit, our doors and hearts are completely open to you."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container" id="giving">
+        <h2 class="section-title">Support Our Ministry</h2>
+        <span class="section-subtitle-line"></span>
+        
+        <div class="giving-outer-box">
+            <p class="giving-intro">Your generous giving directly supports local community ministries and allows us to fuel borderless outreach frameworks, providing essential resources and vital pastoral care to rural mission churches across fields in Nepal.</p>
+            
+            <div class="tithing-card-row">
+                <div class="rectangular-give-card">
+                    <h4>PayNow Transfer</h4>
+                    <p>Transfer tithes and offerings directly via registered phone line link.</p>
+                    <div class="code-highlight">+65 9236 8393</div>
+                </div>
+                <div class="rectangular-give-card">
+                    <h4>Missions Support</h4>
+                    <p>Every donation provides core facilities, outreach frameworks, and local native pastoral care across rural congregation spots in Nepal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container" id="visit">
+        <h2 class="section-title">Plan Your Visit</h2>
+        <span class="section-subtitle-line"></span>
+        
+        <div class="visit-split-layout">
+            <div class="map-wrapper-box">
+                <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=103.7950%2C1.4380%2C103.8050%2C1.4480&amp;layer=mapnik&amp;marker=1.4430%2C103.8005" style="border:0; width:100%; height:100%;"></iframe>
+            </div>
+            
+            <div class="visit-info-panel">
+                <h4>Church Location</h4>
+                <p><strong>21 Woodlands Close, #06-29 Primz Bizhub,</strong><br>Singapore 737854</p>
+                <p style="margin-top: 6px;"><a href="https://tiny.cc/y72y001" target="_blank">Open Route in Google Maps ↗</a></p>
+                
+                <h4>From Admiralty MRT (NS10)</h4>
+                <p>Walk southeast on Woodlands Ave 7 toward Woodlands Dr 64, then turn right onto Woodlands Close. The complex is approximately a 10–12 minute walk.</p>
+                
+                <h4>Driving & On-Site Parking</h4>
+                <p>Accessible easily via SLE onto Woodlands Ave 12. Parking spaces are readily available on-site.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Light of Gospel Church Singapore. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
