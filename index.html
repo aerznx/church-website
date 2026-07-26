@@ -17,8 +17,44 @@
 <meta name="twitter:image" content="https://lightofgospelsg.com/embed-front-page.jpg">
 
 <link rel="icon" type="image/png" href="favicon.png">
-
 <link rel="apple-touch-icon" href="favicon.png">   
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PlaceOfWorship",
+  "additionalType": "https://schema.org/Church",
+  "name": "Light of Gospel Malayalam Pentecostal Church",
+  "url": "https://lightofgospelsg.com/",
+  "logo": "https://lightofgospelsg.com/logo.png",
+  "image": "https://lightofgospelsg.com/embed-front-page.jpg",
+  "description": "A Spirit-filled Malayalam Pentecostal fellowship anchoring lives in scriptural truths and authentic Christian community in Singapore.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "21 Woodlands Close, #06-29 Primz Bizhub",
+    "addressLocality": "Woodlands",
+    "addressRegion": "Singapore",
+    "postalCode": "737854",
+    "addressCountry": "SG"
+  },
+  "telephone": "+65 8934 0684",
+  "knowsLanguage": ["ml", "en"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "09:30",
+      "closes": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "17:30",
+      "closes": "22:30"
+    }
+  ]
+}
+</script>  
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -181,27 +217,46 @@
             border-color: var(--text-light);
         }
 
-        /* Inline Timings Ribbon */
+        /* Service Timings Ribbon Layout */
         .info-bar {
             background-color: var(--primary-blue);
             color: var(--text-light);
-            padding: 24px 20px;
+            padding: 32px 24px;
             border-bottom: 3px solid var(--accent-gold);
         }
 
         .info-grid {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 24px;
-            font-size: 1.25rem;
-            letter-spacing: 0.3px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
         }
-        
-        .info-grid div strong {
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(189, 161, 99, 0.25);
+            padding: 16px 14px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-card span.service-label {
             color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 4px;
+        }
+
+        .info-card span.service-time {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
         }
 
         /* Expanded Main Sections for Luxurious Desktop Space */
@@ -530,10 +585,13 @@
                 min-height: 260px; 
             }
             .info-grid {
-                font-size: 1.1rem;
-                justify-content: center;
-                text-align: center;
+                grid-template-columns: 1fr;
+                gap: 12px;
             }
+            .info-card {
+                padding: 14px 18px;
+            }
+
             .section-container {
                 margin: 80px auto;
             }
@@ -578,11 +636,20 @@
         <a href="https://youtube.com/@lightofgospelmalayalam" target="_blank" class="btn btn-outline">Watch Live ↗</a>
     </section>
 
-    <div class="info-bar">
+        <div class="info-bar">
         <div class="info-grid">
-            <div><strong>Sunday Service (Malayalam):</strong> 9:30 AM – 1:00 PM</div>
-            <div><strong>Saturday Service (English):</strong> 5:30 PM – 7:00 PM</div>
-            <div><strong>Saturday Cottage Meeting:</strong> 7:30 PM – 10:30 PM</div>
+            <div class="info-card">
+                <span class="service-label">Sunday (Malayalam)</span>
+                <span class="service-time">9:30 AM – 1:00 PM</span>
+            </div>
+            <div class="info-card">
+                <span class="service-label">Saturday (English)</span>
+                <span class="service-time">5:30 PM – 7:00 PM</span>
+            </div>
+            <div class="info-card">
+                <span class="service-label">Saturday Cottage Meeting</span>
+                <span class="service-time">7:30 PM – 10:30 PM</span>
+            </div>
         </div>
     </div>
 
